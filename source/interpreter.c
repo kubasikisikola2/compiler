@@ -288,7 +288,7 @@ int getNParams(ASTNode* current, int currentVal){
         return getNParams(current->list.current, currentVal) + getNParams(current->list.next, currentVal);
     }
 
-    return NULL;
+    return 0;
 }
 ASTNode* findNthParamNode(ASTNode* current, int currN, int targetN){
     if(current == NULL) return NULL;
@@ -820,7 +820,6 @@ ValueNode interpretMathOp(ASTNode* node){
                 res.intVal = pow(leftVal, rightVal);
                 break;
             case MOD_OP:
-                char buffer[100];
                 interpreterError("invalid mod operation");
 
         }
@@ -833,11 +832,15 @@ ValueNode interpretIdentifier(ASTNode* node){
     ValueNode res;
     Variable* var = findVar(node->identifier.name);
     if(var == NULL) {
-        interpreterError("Error: Variable '%s' not declared\n", node->identifier.name);
+        char buffer[100];
+        snprintf(buffer, sizeof(buffer), "Error: Variable '%s' not declared\n", node->identifier.name);
+        interpreterError(buffer);
     }
 
     if(!var->hasValue){
-       interpreterError("Error: Variable '%s' has no value\n", node->identifier.name); 
+        char buffer[100];
+        snprintf(buffer, sizeof(buffer), "Error: Variable '%s' has no value\n", node->identifier.name);
+        interpreterError(buffer);
     }
 
     switch(var->type){

@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -g -Wall
-TEST_DIR = tests/invalid
+CFLAGS = -g -w
+TEST_DIR = tests
 
 
 # File names
@@ -13,13 +13,13 @@ OBJECTS = lex.yy.o parser.tab.o ast.o interpreter.o
 
 # Default target: build the parser
 all: clean
-	bison -d $(YACC_FILE) 
-	flex $(LEX_FILE)
-	@$(CC) lex.yy.c parser.tab.c source/ast.c source/interpreter.c -o $(OUTPUT)
+	bison -d -Wnone $(YACC_FILE) 
+	flex -w $(LEX_FILE)
+	@$(CC) $(CFLAGS) lex.yy.c parser.tab.c source/ast.c source/interpreter.c -o $(OUTPUT)
 
 clean:
 	@echo "Cleaning up..."
-	rm -f lex.yy.c parser.tab.c parser.tab.h lex.yy.o parser.tab.o ast.o interpreter.o $(OUTPUT)
+	rm -f lex.yy.c parser.tab.c parser.tab.h lex.yy.o parser.tab.o ast.o interpreter.o $(OUTPUT) 
 
 test: all
 	@echo "Running tests in $(TEST_DIR)..."

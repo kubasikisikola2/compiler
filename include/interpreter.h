@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 
 
@@ -26,7 +27,7 @@ typedef struct {
     union {
         int intVal;
         bool boolVal;
-        double decimalVal
+        double decimalVal;
     }value;
     struct Variable* next;
 } Variable;
@@ -69,6 +70,7 @@ ValueNode interpretStructAssignment(ASTNode* node);
 ValueNode interpretStructMember(ASTNode* node);
 ValueNode interpretFunctionCall(ASTNode* functionCall);
 ValueNode interpretReturn(ASTNode* node);
+void declareVariable(ASTNode* declareNode);
 
 ASTNode* structHasMember(const char* structType, const char* structMember);
 Variable* findMemberVar(StructDeclaration* structDec, const char* identifier);
@@ -84,3 +86,4 @@ Variable* getVarForStructDef(ASTNode* structDefList, Variable* currVar);
 ElifList* getElifList(ASTNode* node, ElifList* currentList);
 void printElifList(ElifList* list);
 void freeElifList(ElifList* list);
+void interpreterError(char* str);

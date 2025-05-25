@@ -271,7 +271,7 @@
                 yyerrorNoToken(msg);
             }else{
                 char val = $4[0];
-                $$ = createVariableDeclaration($2, $1[0], createBoolLiteralNode((val != NULL && val == 'T')));
+                $$ = createVariableDeclaration($2, $1[0], createBoolLiteralNode((val == 'T')));
             }
         }
         | TYPE_IDENTIFIER IDENTIFIER ASIGNMENT_OPERATOR asignmentOptionsNoLiterals SEMICOLON {
@@ -309,7 +309,7 @@
         }
         | BOOLEAN_LITERAL{
             char val = $1[0];
-            $$ = createBoolLiteralNode((val != NULL && val == 'T'));
+            $$ = createBoolLiteralNode((val == 'T'));
         }
         | DECIMAL_LITERAL {
             $$ = createDecimalLiteralNode(strtod($1, NULL));
@@ -371,7 +371,7 @@
         }
         | BOOLEAN_LITERAL {
             char val = $1[0];
-            $$ = createBoolLiteralNode((val != NULL && val == 'T'));
+            $$ = createBoolLiteralNode((val == 'T'));
         }
         | mathExpression {
             $$ = $1;
@@ -409,7 +409,7 @@
     logicOperand:
         BOOLEAN_LITERAL {
             char val = $1[0];
-            $$ = createBoolLiteralNode((val != NULL && val == 'T'));
+            $$ = createBoolLiteralNode((val == 'T'));
         }
         | IDENTIFIER {
             $$ = createIdentifierNode($1);
@@ -495,7 +495,7 @@
     condition:
         BOOLEAN_LITERAL {
             char val = $1[0];
-            $$ = createBoolLiteralNode((val != NULL && val == 'T'));
+            $$ = createBoolLiteralNode((val == 'T'));
         }
         | logicExpression {
             $$ = $1;    
