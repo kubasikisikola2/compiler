@@ -1,0 +1,82 @@
+s struct1{
+    I aa;
+    I bb;
+}
+
+s struct2{
+    I aa;
+    I bb;
+}
+
+
+I f main(){
+    s struct1 str1Dec;
+    s struct2 str2Dec;
+
+    str1Dec.aa = 10;
+    str1Dec.bb = 20;
+    str2Dec.aa = 30;
+    str2Dec.bb = 40;
+
+    p(str1Dec.aa);
+    p(str1Dec.bb);
+    p(str2Dec.aa);
+    p(str2Dec.bb);
+
+    func1();
+
+    p(str1Dec.aa);
+    p(str1Dec.bb);
+    p(str2Dec.aa);
+    p(str2Dec.bb);
+
+}
+
+vf func1(){
+    s struct1 str1Dec;
+    s struct2 str2Dec;
+
+    str1Dec.aa = 50;
+    str1Dec.bb = 60;
+    str2Dec.aa = 70;
+    str2Dec.bb = 80;
+
+    p(str1Dec.aa);
+    p(str1Dec.bb);
+    p(str2Dec.aa);
+    p(str2Dec.bb);
+    func2();
+}
+
+vf func2(){
+    s struct1 str1Dec;
+    s struct2 str2Dec;
+
+    str1Dec.aa = 90;
+    str1Dec.bb = 100;
+    str2Dec.aa = 110;
+    str2Dec.bb = 120;
+
+    p(str1Dec.aa);
+    p(str1Dec.bb);
+    p(str2Dec.aa);
+    p(str2Dec.bb);
+    func3();
+}
+
+vf func3(){
+    s struct1 str1Dec;
+    s struct2 str2Dec;
+
+    str1Dec.aa = 130;
+    str1Dec.bb = 140;
+    str2Dec.aa = 150;
+    str2Dec.bb = 160;
+
+    p(str1Dec.aa);
+    p(str1Dec.bb);
+    p(str2Dec.aa);
+    p(str2Dec.bb);
+}
+
+

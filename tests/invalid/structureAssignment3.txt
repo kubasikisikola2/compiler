@@ -1,0 +1,8 @@
+s struct1{
+    I aa;
+}
+
+I f main(){
+    s struct1 bb;
+    p(bb.aa);
+}

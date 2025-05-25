@@ -1,0 +1,12 @@
+I f main(){
+    I aa = 0;
+    l(aa < 5){
+        p(aa);
+        aa = aa + 1;
+    }
+
+    l(aa < 5){
+        p(aa);
+        aa = aa + 1;
+    }
+}

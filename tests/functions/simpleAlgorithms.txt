@@ -1,0 +1,54 @@
+I f main(){
+    p(countDigits(9879));
+    p(isPrime(101));
+    p(fibonacci(19));
+    p(gcd(6,12));
+}
+
+
+I f countDigits(I num){
+    I count = 0;
+    ?(num == 0){
+      count = 1;
+    }
+    l(num != 0){
+        num = num / 10;
+        count = count + 1;
+    }
+
+    r count;
+}
+
+B f isPrime(I num){
+  B res = T; 
+  
+  l(2..idx=num/2){
+    ?(num % idx == 0){
+      res = F;
+      idx = num/2;
+    } 
+  }
+
+  r res;
+}
+
+I f fibonacci(I num){
+  I res;
+  ?(num <= 1){
+    res = num;
+  }e{
+    res = fibonacci(num - 1) + fibonacci(num - 2);
+  }
+
+  r res;
+}
+
+I f gcd(I aa, I bb){
+    I temp;
+    l(bb != 0) {
+        temp = bb;
+        bb = aa % bb;
+        aa = temp;
+    }
+    r aa;
+}

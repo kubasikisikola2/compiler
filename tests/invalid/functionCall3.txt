@@ -1,0 +1,8 @@
+I f main(){
+    func1(10,10);
+
+}
+
+I f func1(I aa, I bb, I cc){
+    p(aa);
+}

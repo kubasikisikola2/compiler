@@ -1,0 +1,38 @@
+I f main(){
+    p(func1(12,13));
+    I aa = 65 + func1(45,65);
+    p(aa);
+    aa = func2(98, 78);
+    p(aa);
+    func3(32);
+    aa = func4();
+    p(aa);
+    I bb = 10;
+    aa = func5(bb, 10, (1 + 1), func4());
+    p(aa);
+}
+
+I f func1(I aa, I bb){
+    r aa + bb;
+}
+
+I f func2(I aa, I bb){
+    r aa * bb;
+}
+
+vf func3(I aa){
+    p(aa);
+}
+
+I f func4(){
+    r 25;
+}
+
+I f func5(I aa, I bb, I cc, I dd){
+    I res = aa * bb + cc * dd;
+    res = res + 1;
+    r res;
+}
+
+
+

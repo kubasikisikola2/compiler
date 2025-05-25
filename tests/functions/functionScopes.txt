@@ -1,0 +1,26 @@
+I f main(){
+    I aa = 10;
+
+    I bb = func1(25,35);
+    p(bb);
+}
+
+I f func1(I aa, I bb){
+    p(aa);
+    p(bb);
+    r func2(85, 96);
+}
+
+I f func2(I aa, I bb){
+    p(aa);
+    p(bb);
+    r func3(22,105);
+}
+
+I f func3(I aa, I bb){
+    p(aa);
+    p(bb);
+    r aa + bb;
+}
+
+

@@ -1,0 +1,36 @@
+s struct1 {
+    I aa;
+    D bb;
+
+}
+
+s struct2 {
+    B aa;
+    D bb;
+    D cc;
+}
+
+I f main(){
+    s struct1 structDec1;
+    s struct2 structDec2;
+
+    structDec1.aa = 10;
+    structDec1.bb = 65.32;
+
+    structDec2.aa = T;
+    structDec2.bb = 20.32;
+
+    p(structDec1.aa);
+    p(structDec1.bb);
+    p(structDec2.aa);
+    p(structDec2.bb);
+
+    structDec1.bb = structDec2.bb;
+    p(structDec1.bb);
+
+    D sum = structDec1.bb + structDec2.bb;
+    p(sum);
+}
+
+
+

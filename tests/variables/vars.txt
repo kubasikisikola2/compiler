@@ -1,0 +1,20 @@
+I f main(){
+    I aa = 10;
+    p(aa);
+    aa = 20;
+    p(aa);
+
+    I bb = aa;
+    p(bb);
+
+    bb = bb + 20;
+    p(bb);
+
+    B bool1 = T;
+    p(bool1);
+    bool1 = !bool1;
+    p(bool1);
+}
+
+
+
